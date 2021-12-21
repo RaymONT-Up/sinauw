@@ -1,0 +1,224 @@
+.know {
+  position: relative;
+  z-index: 1;
+  &__inner {
+    padding: 12px 0;
+    padding-bottom: 66px;
+  }
+  &__list {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 26px;
+    margin-top: 84px;
+    min-height: 496px;
+  }
+  &__item {
+    display: flex;
+    width: 279px;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 12px;
+    padding-bottom: 22px;
+    border: 3px solid #292a57;
+
+    background: linear-gradient(
+      180deg,
+      #202246 -53.38%,
+      rgba(40, 43, 87, 0.2) 100%
+    );
+    border-radius: 20px;
+
+    transition: all, 0.3s;
+    &:hover .know__btn {
+      margin-top: 28px;
+      padding: 12px 32px;
+
+      font-size: 14px;
+    }
+    &:hover .know__img-wrapper::after {
+      background-color: transparent;
+    }
+    &:hover .know__img-text {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    &:hover {
+      border: 3px solid #262a72;
+      transform: scale(1.025);
+    }
+  }
+  &__img-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+    width: 100%;
+    border-radius: 10px;
+    max-height: 169px;
+    overflow: hidden;
+    &::after {
+      z-index: 2;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      background-color: rgba(30, 32, 67, 0.4);
+
+      transition: all, 0.3s;
+    }
+  }
+  &__img {
+    object-fit: cover;
+  }
+  &__img-text {
+    z-index: 3;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 6px 16px;
+    border-radius: 8px;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+
+    transition: all, 0.3s;
+  }
+  &__info {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #292b56;
+  }
+  &__tag {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+
+    color: #3bf5bd;
+  }
+  &__item-title {
+    margin-bottom: 12px;
+
+    max-width: 246px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &__item-paragraph {
+    max-width: 250px;
+    height: 42px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    font-size: 14px;
+    line-height: 21px;
+
+    color: rgba(255, 255, 255, 0.4);
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+  }
+  &__author-img {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  &__author-info {
+    display: inline-block;
+  }
+  &__author-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &__author-vacancy {
+    font-size: 12px;
+    line-height: 18px;
+
+    color: rgba(255, 255, 255, 0.4);
+  }
+  &__btn {
+    font-weight: 600;
+    font-size: 0;
+    line-height: 17px;
+    border-radius: 6px;
+    margin: 0 auto;
+    color: #ffffff;
+    background: #f5443b;
+    transition: all, 0.3s;
+    &:hover {
+      background-color: #ffffff;
+      color: #f5443b;
+    }
+  }
+  &__btn-wrapper {
+    margin-top: 40px;
+    text-align: center;
+  }
+  &__btn--show {
+    display: inline-block;
+    padding: 16px 32px;
+    border: 1px solid #f5443b;
+    border-radius: 6px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #f5443b;
+    transition: all, 0.35s;
+    &:hover {
+      transform: scale(1.06);
+      color: #fff;
+      background-color: #f5443b;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .know__list {
+    min-height: 520px;
+    overflow-x: auto;
+
+    padding: 20px 10px 10px 10px;
+    margin-top: 60px;
+  }
+  .know__item {
+    min-width: 250px;
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}
+@media (max-width: 540px) {
+  .know__list {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .know__item {
+    width: 252px;
+  }
+  .know__btn--show {
+    width: 100%;
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}
