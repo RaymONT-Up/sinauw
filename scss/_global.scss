@@ -5,15 +5,14 @@ body {
   font-weight: 400;
   font-size: 14px;
   background-color: #171836;
-  overflow-x: hidden;
 }
 body.active {
   overflow-y: hidden;
 }
 * {
   &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
   &::-webkit-scrollbar-track {
     background: transparent;
@@ -72,11 +71,11 @@ body.active {
 }
 @media (max-width: 760px) {
   body::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
 }
 @media (max-width: 460px) {
   body::-webkit-scrollbar {
-    width: 4px;
+    width: 2px;
   }
 }
